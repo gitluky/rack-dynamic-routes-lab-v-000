@@ -9,9 +9,11 @@ class Application
       item_found = Items.all.detect {|item| item.name == item_name}
       if item_found
         resp.write item_found.price
+      else
+        resp.write "No item found."
+        resp.status 404
       end
     else
-      resp.write "No item found."
       resp.status 404
     end
 
