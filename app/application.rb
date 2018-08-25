@@ -6,10 +6,6 @@ class Application
     req = Rack::Request.new(env)
 
     binding.pry
-    if req.path.include?("/items/")
-      item_name = req.path.gsub("/+items/", "")
-    end
-
   end
 
 end
